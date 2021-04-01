@@ -28,7 +28,7 @@ public class TimePickerView: UIControl {
     fileprivate var _textColor: UIColor?
     fileprivate var _textFont: UIFont?
     public let overlayView = UIView()
-    private let MaxHour = 24
+    private let MaxHour = 1000
     private let MaxMinute = 60
     private let MinHour = 0
     private let MinMinute = 0
