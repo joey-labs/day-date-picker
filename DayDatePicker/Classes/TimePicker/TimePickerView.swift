@@ -278,7 +278,7 @@ extension TimePickerView: UITableViewDataSource {
                 return hoursInDay.count
             }*/
             hourRange = 0..<1000
-            return hoursInDay.count
+            return hourRange.count
         } else if tableView == minuteTableView {
             if let minutesInAnHour = Calendar.current.range(of: .minute, in: .hour, for: Date()) {
                 minuteRange = minutesInAnHour
