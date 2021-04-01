@@ -28,7 +28,7 @@ public class TimePickerView: UIControl {
     fileprivate var _textColor: UIColor?
     fileprivate var _textFont: UIFont?
     public let overlayView = UIView()
-    private let MaxHour = 1000
+    private let MaxHour = 1000 //24
     private let MaxMinute = 60
     private let MinHour = 0
     private let MinMinute = 0
@@ -248,7 +248,7 @@ extension TimePickerView {
             _time = Time(hour: components.hour, minute: components.minute)
         }
 
-        hourRange = Calendar.current.range(of: .hour, in: .day, for: Date())
+        hourRange = 0..<1000 //Calendar.current.range(of: .hour, in: .day, for: Date())
         minuteRange = Calendar.current.range(of: .minute, in: .hour, for: Date())
     }
 
@@ -273,10 +273,12 @@ extension TimePickerView {
 extension TimePickerView: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == hourTableView {
-            if let hoursInDay = Calendar.current.range(of: .hour, in: .day, for: Date()) {
+            /*if let hoursInDay = Calendar.current.range(of: .hour, in: .day, for: Date()) {
                 hourRange = hoursInDay
                 return hoursInDay.count
-            }
+            }*/
+            hourRange = 0..<1000
+            return hoursInDay.count
         } else if tableView == minuteTableView {
             if let minutesInAnHour = Calendar.current.range(of: .minute, in: .hour, for: Date()) {
                 minuteRange = minutesInAnHour
