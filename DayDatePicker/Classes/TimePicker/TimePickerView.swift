@@ -303,7 +303,8 @@ extension TimePickerView: UITableViewDataSource {
                 cell.textLabel?.textColor = UIColor.lightGray
             }
             
-            cell.textLabel?.text = String(hour)
+            let postfix = hour == 1 ? " hr" : " hrs"
+            cell.textLabel?.text = String(hour) + postfix
             
             delegate?.customizeCell(cell: cell, atIndexPath: indexPath, forType: .hour)
         } else if tableView == minuteTableView {
@@ -315,7 +316,7 @@ extension TimePickerView: UITableViewDataSource {
                 cell.textLabel?.textColor = UIColor.lightGray
             }
             
-            cell.textLabel?.text = String(time.minute)
+            cell.textLabel?.text = String(time.minute) + "min"
             
             delegate?.customizeCell(cell: cell, atIndexPath: indexPath, forType: .minute)
         }
