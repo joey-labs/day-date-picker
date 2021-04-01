@@ -316,7 +316,7 @@ extension TimePickerView: UITableViewDataSource {
                 cell.textLabel?.textColor = UIColor.lightGray
             }
             
-            cell.textLabel?.text = String(time.minute) + "min"
+            cell.textLabel?.text = String(time.minute) + " min"
             
             delegate?.customizeCell(cell: cell, atIndexPath: indexPath, forType: .minute)
         }
